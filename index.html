@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Essentials Avo</title>
+<meta name="description" content="Handmade avocado oil skincare, hair care and body care, made in small batches in the Philippines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Figtree:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --skin:#1F3A1C;      /* avocado skin */
+  --skin-2:#2E5728;
+  --flesh:#EEEDCB;     /* page ground: avocado flesh */
+  --flesh-2:#E1E2B3;
+  --yolk:#F5C13B;      /* logo yellow */
+  --pit:#4B3323;       /* seed brown */
+  --ink:#1D2418;
+  --muted:#56604A;
+  --label:#FBFAF1;
+  --line:#CFD1A0;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --hand:'Kalam','Comic Sans MS','Marker Felt',cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{font-family:var(--body);background:var(--flesh);color:var(--ink);line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yolk);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);text-transform:uppercase;line-height:.92;text-wrap:balance;letter-spacing:.005em}
+
+/* nav */
+.nav{background:var(--skin);color:var(--flesh);position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(238,237,203,.12)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:900;font-size:1.35rem;text-transform:uppercase;letter-spacing:.02em}
+.brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;background:#fff}
+.brand span b{color:var(--yolk);font-weight:900}
+.nav ul{display:flex;gap:4px;list-style:none;align-items:center}
+.nav ul a{text-decoration:none;font-weight:600;font-size:.92rem;padding:8px 12px;border-radius:4px;color:rgba(238,237,203,.8)}
+.nav ul a:hover{color:var(--flesh)}
+.nav ul a.cta{background:var(--yolk);color:var(--skin)}
+@media (max-width:720px){.nav ul li:not(:last-child){display:none}}
+
+/* hero */
+.hero{background:var(--skin);color:var(--flesh);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-top:56px;padding-bottom:64px}
+.kicker{font-family:var(--hand);color:var(--yolk);font-size:1.35rem;margin-bottom:10px}
+.hero h1{font-weight:900;font-size:clamp(3.4rem,8.5vw,7.4rem)}
+.hero h1 em{font-style:normal;color:var(--yolk)}
+.hero p.lead{max-width:34ch;font-size:1.15rem;color:rgba(238,237,203,.86);margin:22px 0 30px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:4px;border:2px solid var(--yolk)}
+.btn.solid{background:var(--yolk);color:var(--skin)}
+.btn.ghost{color:var(--yolk)}
+.btn:hover{transform:translateY(-1px)}
+.hero-art{position:relative;min-height:440px}
+.hero-art .cut{position:absolute;right:0;top:0;width:88%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.hero-art .oil{position:absolute;left:0;bottom:0;width:46%;aspect-ratio:3/4;object-fit:cover;border:8px solid var(--skin);border-radius:4px}
+.hero-art .tag{position:absolute;right:6%;bottom:18px;background:var(--label);color:var(--pit);font-family:var(--hand);font-size:1.25rem;padding:6px 16px;transform:rotate(-4deg);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-art{min-height:360px}}
+
+/* promise strip */
+.strip{background:var(--yolk);color:var(--skin)}
+.strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding-top:14px;padding-bottom:14px;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.3rem;letter-spacing:.03em}
+
+/* sections */
+section.block{padding:88px 0}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:44px}
+.head h2{font-weight:900;font-size:clamp(2.6rem,5.5vw,4.4rem);color:var(--skin)}
+.head p{color:var(--muted);max-width:52ch}
+@media (max-width:760px){.head{grid-template-columns:1fr}}
+
+/* products */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.prod{background:var(--label);border:1px solid var(--line);padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px}
+.prod .code{font-family:var(--hand);font-weight:700;font-size:1.6rem;color:var(--pit);line-height:1;align-self:flex-start;border:1.5px solid var(--pit);padding:4px 12px 2px;transform:rotate(-2deg);margin-bottom:6px}
+.prod h3{font-size:1.9rem;font-weight:900;color:var(--skin)}
+.prod p{color:var(--muted);font-size:.97rem;flex:1}
+.prod .meta{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed var(--line);padding-top:12px;margin-top:6px;font-size:.88rem}
+.prod .meta span{color:var(--muted)}
+.prod .meta a{font-weight:700;color:var(--skin-2);text-decoration:none}
+.prod .meta a:hover{text-decoration:underline}
+.shelf{margin-top:40px;display:grid;grid-template-columns:2fr 1fr;gap:18px}
+.shelf img{width:100%;height:100%;object-fit:cover;border-radius:4px;aspect-ratio:4/3}
+@media (max-width:760px){.shelf{grid-template-columns:1fr}}
+
+/* process */
+.process{background:var(--flesh-2)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;list-style:none;counter-reset:s}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:12px}
+.steps img{aspect-ratio:1/1;object-fit:cover;width:100%;border-radius:4px}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:900;font-size:3rem;line-height:1;color:var(--skin-2)}
+.steps h3{font-size:1.6rem;color:var(--skin)}
+.steps p{font-size:.95rem;color:var(--muted)}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about img{border-radius:4px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.about h2{font-weight:900;font-size:clamp(2.6rem,5vw,4rem);color:var(--skin);margin-bottom:20px}
+.about p{max-width:56ch;margin-bottom:14px}
+.about .sign{font-family:var(--hand);font-size:1.7rem;color:var(--pit)}
+@media (max-width:820px){.about .wrap{grid-template-columns:1fr}}
+
+/* order */
+.order{background:var(--skin);color:var(--flesh);text-align:left}
+.order .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding-top:80px;padding-bottom:80px}
+.order h2{font-weight:900;font-size:clamp(3rem,6.5vw,5.4rem)}
+.order h2 em{font-style:normal;color:var(--yolk)}
+.order ol{list-style:none;counter-reset:o;display:grid;gap:14px}
+.order li{counter-increment:o;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:baseline;color:rgba(238,237,203,.88)}
+.order li::before{content:counter(o);font-family:var(--display);font-weight:900;font-size:2rem;color:var(--yolk)}
+.order .btns{margin-top:26px}
+@media (max-width:820px){.order .wrap{grid-template-columns:1fr}}
+
+footer{background:#172C15;color:rgba(238,237,203,.7);font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;padding-bottom:24px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="images/logo.jpg" alt=""><span>All Essentials <b>Avo</b></span></a>
+    <ul>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#how">How it's made</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a class="cta" href="#order">Order</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="kicker">handmade in small batches</p>
+      <h1>From the <em>avocado</em> to your skin</h1>
+      <p class="lead">Oil pressed from real avocados, then blended by hand into butters, serums, balms and soaps for your skin and hair.</p>
+      <div class="btns">
+        <a class="btn solid" href="#products">See the products</a>
+        <a class="btn ghost" href="#order">How to order</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img class="cut" src="images/avocado-cut.jpg" alt="An avocado cut in half with its seed, next to two whole avocados">
+      <img class="oil" src="images/infused-closeup.jpg" alt="A glass bottle of avocado oil with herbs soaking inside">
+      <span class="tag">100% avocado oil base</span>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <span>Pressed from real fruit</span><span>Blended by hand</span><span>Made in the Philippines</span>
+  </div>
+</div>
+
+<section class="block" id="products">
+  <div class="wrap">
+    <div class="head">
+      <h2>The avocado shelf</h2>
+      <p>Every product starts with the same avocado oil. The letters are the labels you'll see on the bottles and jars.</p>
+    </div>
+    <div class="grid">
+      <article class="prod"><span class="code">Body Butter</span><h3>Body Butter</h3><p>A thick, rich butter for dry skin on elbows, knees, hands and feet.</p><div class="meta"><span>Jar</span><a href="#order">Ask for price</a></div></article>
+      <article class="prod"><span class="code">FS</span><h3>Face Serum</h3><p>A light oil serum. Use a few drops on clean skin in the morning or at night.</p><div class="meta"><span>Dropper bottle</span><a href="#order">Ask for price</a></div></article>
+      <article class="prod"><span class="code">HS</span><h3>Hair Serum</h3><p>Smooths dry ends and adds shine. Use a small amount on damp or dry hair.</p><div class="meta"><span>Spray bottle</span><a href="#order">Ask for price</a></div></article>
+      <article class="prod"><span class="code">HSS</span><h3>Hair &amp; Scalp Serum</h3><p>A dropper serum to massage into the scalp and through the hair.</p><div class="meta"><span>Dropper bottle</span><a href="#order">Ask for price</a></div></article>
+      <article class="prod"><span class="code">FM</span><h3>Face Moisturiser</h3><p>A creamy green lotion in a pump bottle for everyday moisture.</p><div class="meta"><span>Pump bottle</span><a href="#order">Ask for price</a></div></article>
+      <article class="prod"><span class="code">pH5</span><h3>Body Wash</h3><p>A gentle pH 5 wash that cleans without leaving your skin tight.</p><div class="meta"><span>Bottle</span><a href="#order">Ask for price</a></div></article>
+      <article class="prod"><span class="code">Massage</span><h3>Massage Oil</h3><p>A smooth avocado oil blend for massage after a long day.</p><div class="meta"><span>Bottle</span><a href="#order">Ask for price</a></div></article>
+      <article class="prod"><span class="code">Pain R</span><h3>Muscle Balm</h3><p>A warming balm to rub into tired muscles and sore shoulders.</p><div class="meta"><span>Bottle</span><a href="#order">Ask for price</a></div></article>
+      <article class="prod"><span class="code">Mosquito</span><h3>Mosquito Balm</h3><p>A plant-oil balm to smooth onto skin before you go outside.</p><div class="meta"><span>Jar</span><a href="#order">Ask for price</a></div></article>
+    </div>
+    <div class="shelf">
+      <img src="images/product-shelf.jpg" alt="The full range on a shelf: body butters, serums, body wash, massage oil, pain reliever and mosquito repellent">
+      <img src="images/serum-pumps.jpg" alt="Two green avocado lotions in pump bottles with heart-shaped soaps">
+    </div>
+  </div>
+</section>
+
+<section class="block process" id="how">
+  <div class="wrap">
+    <div class="head">
+      <h2>How it's made</h2>
+      <p>No factory. Each batch goes from fruit to bottle in four steps.</p>
+    </div>
+    <ol class="steps">
+      <li><img src="images/avocado-basket.jpg" alt="A basket of fresh green avocados"><h3>Choose the fruit</h3><p>Ripe, local avocados, picked by hand.</p></li>
+      <li><img src="images/oils-tall.jpg" alt="Three tall bottles of green avocado oil"><h3>Extract the oil</h3><p>The oil is taken from the fruit and left to settle until it is clear.</p></li>
+      <li><img src="images/infused-oils.jpg" alt="Four swing-top bottles of oil, two with herbs soaking inside"><h3>Infuse with herbs</h3><p>Some oils rest with herbs for weeks to add scent and care.</p></li>
+      <li><img src="images/gift-display.jpg" alt="Serums, balms, lip balms and heart-shaped soaps on a woven tray"><h3>Blend and bottle</h3><p>The oil becomes butters, serums, balms and soaps, labelled by hand.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block about" id="about">
+  <div class="wrap">
+    <img src="images/dropper-oils.jpg" alt="Two dropper bottles of avocado oil on a woven tray with dried flowers">
+    <div>
+      <h2>Made by Flo</h2>
+      <p>All Essentials Avo started in a home kitchen with a basket of avocados and a question: what else can this fruit do?</p>
+      <p>Months of test batches later, the answer is a whole shelf. Every jar and bottle is still made, filled and labelled by hand.</p>
+      <p class="sign">— Flo</p>
+    </div>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="wrap">
+    <h2>Order in a <em>message</em></h2>
+    <div>
+      <ol>
+        <li>Choose the products you want from the shelf above.</li>
+        <li>Send a message with the names and how many you'd like.</li>
+        <li>Flo replies with the price, payment details and delivery.</li>
+      </ol>
+      <div class="btns">
+        <a class="btn solid" href="#order">Message on WhatsApp</a>
+        <a class="btn ghost" href="#order">Message on Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 All Essentials Avo</span>
+    <span>Handmade avocado care · Philippines</span>
+  </div>
+</footer>
+
+</body>
+</html>
