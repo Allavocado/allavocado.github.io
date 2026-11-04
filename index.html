@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Essentials Avo</title>
+<title>All Avo Essentials</title>
 <meta name="description" content="Handmade avocado oil skincare, hair care and body care, made in small batches in the Philippines.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,9 +36,10 @@ h1,h2,h3{font-family:var(--display);text-transform:uppercase;line-height:.92;tex
 
 /* nav */
 .nav{background:var(--skin);color:var(--flesh);position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(238,237,203,.12)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:78px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:900;font-size:1.35rem;text-transform:uppercase;letter-spacing:.02em}
-.brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;background:#fff}
+.brand img.banner{height:58px;width:auto;background:#FDFAF5;padding:5px 16px;border-radius:6px;box-shadow:inset 0 0 0 2px var(--skin-2),inset 0 0 0 4px #FDFAF5,inset 0 0 0 5px var(--yolk)}
+@media (max-width:420px){.brand img.banner{height:48px;padding:4px 12px}}
 .brand span b{color:var(--yolk);font-weight:900}
 .nav ul{display:flex;gap:4px;list-style:none;align-items:center}
 .nav ul a{text-decoration:none;font-weight:600;font-size:.92rem;padding:8px 12px;border-radius:4px;color:rgba(238,237,203,.8)}
@@ -58,11 +59,12 @@ h1,h2,h3{font-family:var(--display);text-transform:uppercase;line-height:.92;tex
 .btn.solid{background:var(--yolk);color:var(--skin)}
 .btn.ghost{color:var(--yolk)}
 .btn:hover{transform:translateY(-1px)}
-.hero-art{position:relative;min-height:440px}
+.hero-art{position:relative}
+.hero-art .solo{width:100%;max-width:560px;margin-left:auto;aspect-ratio:4/3;object-fit:cover;border-radius:6px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
 .hero-art .cut{position:absolute;right:0;top:0;width:88%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
 .hero-art .oil{position:absolute;left:0;bottom:0;width:46%;aspect-ratio:3/4;object-fit:cover;border:8px solid var(--skin);border-radius:4px}
 .hero-art .tag{position:absolute;right:6%;bottom:18px;background:var(--label);color:var(--pit);font-family:var(--hand);font-size:1.25rem;padding:6px 16px;transform:rotate(-4deg);box-shadow:0 6px 18px rgba(0,0,0,.25)}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-art{min-height:360px}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-art .solo{margin:0 auto}}
 
 /* promise strip */
 .strip{background:var(--yolk);color:var(--skin)}
@@ -87,7 +89,8 @@ section.block{padding:88px 0}
 .prod .meta span{color:var(--muted)}
 .prod .meta a{font-weight:700;color:var(--skin-2);text-decoration:none}
 .prod .meta a:hover{text-decoration:underline}
-.shelf{margin-top:40px;display:grid;grid-template-columns:2fr 1fr;gap:18px}
+.range{margin-top:40px;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;box-shadow:0 12px 30px rgba(31,58,28,.15)}
+.shelf{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .shelf img{width:100%;height:100%;object-fit:cover;border-radius:4px;aspect-ratio:4/3}
 @media (max-width:760px){.shelf{grid-template-columns:1fr}}
 
@@ -121,6 +124,17 @@ section.block{padding:88px 0}
 .order .btns{margin-top:26px}
 @media (max-width:820px){.order .wrap{grid-template-columns:1fr}}
 
+/* labels */
+.labels{background:var(--label);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.label-row{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;align-items:start}
+.label-row figure{margin:0}
+.label-row img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:4px;box-shadow:0 10px 26px rgba(31,58,28,.18)}
+.label-row figcaption{font-family:var(--hand);color:var(--pit);font-size:1.15rem;margin-top:10px;text-align:center}
+.label-row{max-width:680px;margin:0 auto}
+@media (max-width:760px){.label-row{gap:14px}}
+.about .motto{font-family:var(--hand);font-size:1.6rem;color:var(--skin-2);margin:6px 0 10px}
+.about img.brand-art{aspect-ratio:1/1;object-fit:contain;background:#FBF8EF;box-shadow:0 10px 26px rgba(31,58,28,.15)}
+
 footer{background:#172C15;color:rgba(238,237,203,.7);font-size:.88rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;padding-bottom:24px}
 </style>
@@ -129,9 +143,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <nav class="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="images/logo.jpg" alt=""><span>All Essentials <b>Avo</b></span></a>
+    <a class="brand" href="#top" aria-label="All Avo Essentials – home"><img class="banner" src="images/brand-banner.png" alt="All Avo Essentials"></a>
     <ul>
       <li><a href="#products">Products</a></li>
+      <li><a href="#labels">Labels</a></li>
       <li><a href="#how">How it's made</a></li>
       <li><a href="#about">About</a></li>
       <li><a class="cta" href="#order">Order</a></li>
@@ -151,9 +166,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       </div>
     </div>
     <div class="hero-art">
-      <img class="cut" src="images/avocado-cut.jpg" alt="An avocado cut in half with its seed, next to two whole avocados">
-      <img class="oil" src="images/infused-closeup.jpg" alt="A glass bottle of avocado oil with herbs soaking inside">
-      <span class="tag">100% avocado oil base</span>
+      <img class="solo" src="images/avocado-cut.jpg" alt="The All Avo Essentials range: carrier and massage oils, body lotion, facial cleanser, face oil, roll-on, balms, salve, clay mask and heart-shaped soaps">
     </div>
   </div>
 </header>
@@ -180,10 +193,27 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <article class="prod"><span class="code">Massage</span><h3>Massage Oil</h3><p>A smooth avocado oil blend for massage after a long day.</p><div class="meta"><span>Bottle</span><a href="https://wa.me/639260516083?text=Hi%20Flo%21%20How%20much%20is%20the%20Massage%20Oil%3F" target="_blank" rel="noopener">Ask for price</a></div></article>
       <article class="prod"><span class="code">Pain R</span><h3>Muscle Balm</h3><p>A warming balm to rub into tired muscles and sore shoulders.</p><div class="meta"><span>Bottle</span><a href="https://wa.me/639260516083?text=Hi%20Flo%21%20How%20much%20is%20the%20Muscle%20Balm%3F" target="_blank" rel="noopener">Ask for price</a></div></article>
       <article class="prod"><span class="code">Mosquito</span><h3>Mosquito Balm</h3><p>A plant-oil balm to smooth onto skin before you go outside.</p><div class="meta"><span>Jar</span><a href="https://wa.me/639260516083?text=Hi%20Flo%21%20How%20much%20is%20the%20Mosquito%20Balm%3F" target="_blank" rel="noopener">Ask for price</a></div></article>
+      <article class="prod"><span class="code">EVAO</span><h3>Extra Virgin Avocado Oil</h3><p>Our first-press oil for the kitchen. Drizzle on salads, toast and vegetables, or use for gentle cooking.</p><div class="meta"><span>Glass bottle</span><a href="https://wa.me/639260516083?text=Hi%20Flo%21%20How%20much%20is%20the%20Extra%20Virgin%20Avocado%20Oil%3F" target="_blank" rel="noopener">Ask for price</a></div></article>
+      <article class="prod"><span class="code">Infused</span><h3>Infused Cooking Oils</h3><p>Avocado oil rested with herbs: rosemary; oregano and thyme; or key lime, jalapeño and cilantro.</p><div class="meta"><span>Glass bottle</span><a href="https://wa.me/639260516083?text=Hi%20Flo%21%20How%20much%20is%20the%20Infused%20Cooking%20Oils%3F" target="_blank" rel="noopener">Ask for price</a></div></article>
+      <article class="prod"><span class="code">Seed</span><h3>Avocado Seed Ointment</h3><p>A soothing rub made from avocado seeds with beeswax and cocoa butter, for tired muscles and joints.</p><div class="meta"><span>Tin</span><a href="https://wa.me/639260516083?text=Hi%20Flo%21%20How%20much%20is%20the%20Avocado%20Seed%20Ointment%3F" target="_blank" rel="noopener">Ask for price</a></div></article>
     </div>
+    <img class="range" src="images/skincare-range.jpg" alt="The All Avo Essentials skincare range: body butters, pH 5 body wash, massage oil, HS hydrating spray, HSS hair and scalp serum, FS facial serum, pain relief oil, soothing balm and mosquito repellent balm">
     <div class="shelf">
-      <img src="images/product-shelf.jpg" alt="The full range on a shelf: body butters, serums, body wash, massage oil, pain reliever and mosquito repellent">
-      <img src="images/serum-pumps.jpg" alt="Two green avocado lotions in pump bottles with heart-shaped soaps">
+      <img src="images/product-shelf.jpg" alt="Two bottles of All Avo Essentials avocado oil on a woven mat with dried flowers and heart-shaped soaps">
+      <img src="images/skincare-duo.jpg" alt="All Avo Essentials Facial Serum and Facial Moisturiser on a woven mat with dried flowers and heart-shaped soaps">
+    </div>
+  </div>
+</section>
+
+<section class="block labels" id="labels">
+  <div class="wrap">
+    <div class="head">
+      <h2>Our labels</h2>
+      <p>Every bottle carries a hand-finished label: the product name and size on the front, and the ingredients, how to use and store it, the batch and best-before date on the back. Scan the code on the back to come straight back here.</p>
+    </div>
+    <div class="label-row">
+      <figure><img src="images/label-front-avocado-oil.jpg" alt="Front label for All Avo Essentials Extra Virgin Avocado Oil"><figcaption>Front</figcaption></figure>
+      <figure><img src="images/label-back-avocado-oil.jpg" alt="Back label with ingredients, use, storage, batch and best-before lines, made by Flo Mojica in Cavite, Philippines, and a QR code"><figcaption>Back</figcaption></figure>
     </div>
   </div>
 </section>
@@ -195,9 +225,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <p>No factory. Each batch goes from fruit to bottle in four steps.</p>
     </div>
     <ol class="steps">
-      <li><img src="images/avocado-basket.jpg" alt="A basket of fresh green avocados"><h3>Choose the fruit</h3><p>Ripe, local avocados, picked by hand.</p></li>
-      <li><img src="images/oils-tall.jpg" alt="Three tall bottles of green avocado oil"><h3>Extract the oil</h3><p>The oil is taken from the fruit and left to settle until it is clear.</p></li>
-      <li><img src="images/infused-oils.jpg" alt="Four swing-top bottles of oil, two with herbs soaking inside"><h3>Infuse with herbs</h3><p>Some oils rest with herbs for weeks to add scent and care.</p></li>
+      <li><img src="images/avocado-basket.jpg" alt="A wicker basket full of glossy green avocados"><h3>Choose the fruit</h3><p>Ripe, local avocados, picked by hand.</p></li>
+      <li><img src="images/oils-tall.jpg" alt="Three tall bottles of avocado oil, from deep green to golden"><h3>Extract the oil</h3><p>The oil is taken from the fruit and left to settle until it is clear.</p></li>
+      <li><img src="images/infused-oils.jpg" alt="Four swing-top bottles of avocado oil on marble, two with herbs soaking inside"><h3>Infuse with herbs</h3><p>Some oils rest with herbs for weeks to add scent and care.</p></li>
       <li><img src="images/gift-display.jpg" alt="Serums, balms, lip balms and heart-shaped soaps on a woven tray"><h3>Blend and bottle</h3><p>The oil becomes butters, serums, balms and soaps, labelled by hand.</p></li>
     </ol>
   </div>
@@ -205,11 +235,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <section class="block about" id="about">
   <div class="wrap">
-    <img src="images/dropper-oils.jpg" alt="Two dropper bottles of avocado oil on a woven tray with dried flowers">
+    <img src="images/flo-avocados.jpg" alt="Two whole avocados and a halved avocado with its seed on a dark table">
     <div>
       <h2>Made by Flo</h2>
-      <p>All Essentials Avo started in a home kitchen with a basket of avocados and a question: what else can this fruit do?</p>
+      <p>All Avo Essentials started in a home kitchen with a basket of avocados and a question: what else can this fruit do?</p>
       <p>Months of test batches later, the answer is a whole shelf. Every jar and bottle is still made, filled and labelled by hand.</p>
+      <p class="motto">Nothing goes to waste.</p>
+      <p>The flesh goes to the table, the overripe fruit and peel become oil, and even the seeds are soaked to make a soothing ointment.</p>
       <p class="sign">— Flo</p>
     </div>
   </div>
@@ -225,7 +257,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         <li>Flo replies with the price, payment details and delivery.</li>
       </ol>
       <div class="btns">
-        <a class="btn solid" href="https://wa.me/639260516083?text=Hi%20Flo%21%20I%27d%20like%20to%20order%20from%20All%20Essentials%20Avo." target="_blank" rel="noopener">Message on WhatsApp</a>
+        <a class="btn solid" href="https://wa.me/639260516083?text=Hi%20Flo%21%20I%27d%20like%20to%20order%20from%20All%20Avo%20Essentials." target="_blank" rel="noopener">Message on WhatsApp</a>
         <a class="btn ghost" href="https://www.facebook.com/profile.php?id=100095337271948" target="_blank" rel="noopener">Message on Facebook</a>
       </div>
     </div>
@@ -234,7 +266,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <footer>
   <div class="wrap">
-    <span>© 2026 All Essentials Avo</span>
+    <span>© 2026 All Avo Essentials</span>
     <span>Handmade avocado care · Philippines</span>
   </div>
 </footer>

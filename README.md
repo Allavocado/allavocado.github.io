@@ -1,4 +1,4 @@
-# All Essentials Avo
+# All Avo Essentials
 
 Handmade avocado oil skincare, hair care and body care, made in the Philippines.
 
